@@ -1,0 +1,14 @@
+.gradle
+build
+**/build/**
+HELP.md
+generated
+target
+../.DS_Store
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/

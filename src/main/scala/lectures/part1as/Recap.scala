@@ -8,4 +8,5 @@ object Recap extends App {
     if(true) 54
     "manish"
   }
+  print(aCodeBlock)
 }

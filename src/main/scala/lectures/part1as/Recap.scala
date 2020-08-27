@@ -10,4 +10,7 @@ object Recap extends App {
     72
   }
   print(aCodeBlock)
+
+  // functions
+  def aFunction(i: Int): Int = i + 1
 }

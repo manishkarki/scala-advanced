@@ -1,5 +1,7 @@
 package lectures.part1as
 
+import scala.annotation.tailrec
+
 /**
  * @author mkarki
  */
@@ -13,4 +15,24 @@ object Recap extends App {
 
   // functions
   def aFunction(i: Int): Int = i + 1
+
+  def gcd(a: Int, b: Int): Int = {
+    if(b == 0)
+      a
+    else
+      gcd(b, b % a)
+  }
+
+  def factorial(n: Int): Int = {
+    @tailrec
+    def iter(x: Int, result: Int): Int =
+      if (x == 0)
+        result
+      else iter(x - 1, result * x)
+
+    iter(n, 0)
+  }
+
+  println(factorial(6))
+
 }

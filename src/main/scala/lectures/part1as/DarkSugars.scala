@@ -12,4 +12,17 @@ object DarkSugars extends App {
     // write something and then return the result
     42
   }
+
+  // syntactic sugar $2: Single abstract method
+  trait Action {
+    def act(x: Int): Int
+  }
+
+  val anInstance: Action = new Action {
+    override def act(x: Int): Int = x + 1
+  }
+
+  val aFunkyInstance: Action = (x: Int) => x + 1
+
+  // identically above two things are same
 }

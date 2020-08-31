@@ -35,10 +35,11 @@ object DarkSugars extends App {
 
   abstract  class AnAbstractType {
     def implementedMethod: Int = 25
-    def f(a: Int): Unit
+    def f(a: Int = 2): Unit
   }
 
   val anAbstractInstance: AnAbstractType = (a: Int) => println("done")
-
+  println(anAbstractInstance.implementedMethod)
+  println(anAbstractInstance.f())
 
 }

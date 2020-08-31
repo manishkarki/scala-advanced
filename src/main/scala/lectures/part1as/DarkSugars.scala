@@ -70,4 +70,9 @@ object DarkSugars extends App {
   class -->[A, B]
   val towards: Int --> String = ???
 
+  // syntax sugar $6: update, much like apply
+  val anArray = Array(1, 2, 3)
+  anArray(2) = 7 // rewritten to anArray.update(2, 7)
+  // update is used in mutable collections
+
 }

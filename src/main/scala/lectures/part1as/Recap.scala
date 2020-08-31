@@ -47,4 +47,12 @@ object Recap extends App {
   // applying incrementer to the list
   List(1, 2, 3)
     .map(anonymousIncrementer)
+
+  // for comprehensions
+  val pairs = for {
+    num <- List(1, 2, 3)
+    char <- List('a', 'b', 'c')
+  } yield num + '-' + char
+
+  println(pairs)
 }

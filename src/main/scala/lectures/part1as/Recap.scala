@@ -47,5 +47,4 @@ object Recap extends App {
   // applying incrementer to the list
   List(1, 2, 3)
     .map(anonymousIncrementer)
-    .foreach(a => println(a))
 }

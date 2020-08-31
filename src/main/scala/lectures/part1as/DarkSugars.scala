@@ -75,4 +75,15 @@ object DarkSugars extends App {
   anArray(2) = 7 // rewritten to anArray.update(2, 7)
   // update is used in mutable collections
 
+
+  // // syntax sugar $7: setters for mutable container
+  class Mutable {
+    private var internalMember: Int = 0 // private for oo encapsulation
+    def member: Int = internalMember
+    def member_=(value:Int): Unit =
+      internalMember = value // setter
+  }
+
+  val aMutableContainer = new Mutable
+  aMutableContainer.member = 42 // rewritten as aMutable.member_= 42
 }

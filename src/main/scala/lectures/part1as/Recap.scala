@@ -53,4 +53,13 @@ object Recap extends App {
     num <- List(1, 2, 3)
     char <- List('a', 'b', 'c')
   } yield num + "_" + char
+
+  // pattern matching
+  val x = 2
+  val order = x match {
+    case 1 => "first"
+    case 2 => "second"
+    case _ => x + "th"
+  }
+
 }

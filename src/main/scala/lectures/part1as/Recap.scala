@@ -35,4 +35,9 @@ object Recap extends App {
 
   println(factorial(6))
 
+  // functional programming
+  val incrementer = new Function[Int, Int] {
+    override def apply(v1: Int): Int = v1 + 1
+  }
+  println(incrementer(3))
 }

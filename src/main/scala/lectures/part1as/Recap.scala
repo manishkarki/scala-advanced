@@ -39,5 +39,5 @@ object Recap extends App {
   val incrementer = new Function[Int, Int] {
     override def apply(v1: Int): Int = v1 + 1
   }
-  println(incrementer(3))
+  incrementer(3)
 }

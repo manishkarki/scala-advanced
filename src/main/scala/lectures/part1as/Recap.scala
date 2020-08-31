@@ -70,5 +70,4 @@ object Recap extends App {
     case Person(_, age) => s"Your age is $age"
   }
 
-  println(greeting)
 }

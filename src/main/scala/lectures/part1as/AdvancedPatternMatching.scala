@@ -30,7 +30,6 @@ object AdvancedPatternMatching extends App {
   val greet = bob match {
     case Person(name, age) => s"Hi, my name is $name and I'm $age y.o"
   }
-  println(greet)
 
   val legalStatus = bob.age match {
     case Person(status) => s"My legal status is : $status"

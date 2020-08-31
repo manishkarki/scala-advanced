@@ -45,6 +45,5 @@ object DarkSugars extends App {
 
   // scala spec: last char decides associativity of method
   // i.e if char is : right associative
-  println(1 :: 2 :: 3 :: List(5, 6, 7))
 
 }

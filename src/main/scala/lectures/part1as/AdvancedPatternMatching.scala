@@ -18,5 +18,14 @@ object AdvancedPatternMatching extends App {
       - tuples
 
    */
+  class Person(val name: String, val age: Int)
 
+  object Person {
+    def unapply(person: Person): Option[(String, Int)] = Some((person.name, person.age))
+  }
+
+  val bob = new Person("Bob", 23)
+  val greet = bob match {
+    case Person(name, age) => s"Hi, my name is $name and I'm $age y.o"
+  }
 }

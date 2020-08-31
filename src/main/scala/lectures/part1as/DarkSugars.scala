@@ -1,8 +1,8 @@
 package lectures.part1as
 
 /**
- * @author mkarki
- */
+  * @author mkarki
+  */
 object DarkSugars extends App {
 
   // syntax sugar #1: methods with single param
@@ -31,9 +31,10 @@ object DarkSugars extends App {
     override def run(): Unit = println("hello, scala")
   })
 
-  val nicerThread = new Thread(() => println("Hello scala thread using lambda/anonymous"))
+  val nicerThread = new Thread(
+    () => println("Hello scala thread using lambda/anonymous"))
 
-  abstract  class AnAbstractType {
+  abstract class AnAbstractType {
     def implementedMethod: Int = 25
     def f(a: Int = 2): Unit
   }
@@ -49,7 +50,7 @@ object DarkSugars extends App {
   List(4, 5).::(3).::(2).::(1) // equivalent
 
   class MyStream[T] {
-    def -->: (value: T): MyStream[T] = this // actual impl
+    def -->:(value: T): MyStream[T] = this // actual impl
   }
 
   val myStream = 1 -->: 2 -->: 3 -->: new MyStream[Int]
@@ -75,12 +76,11 @@ object DarkSugars extends App {
   anArray(2) = 7 // rewritten to anArray.update(2, 7)
   // update is used in mutable collections
 
-
   // // syntax sugar $7: setters for mutable container
   class Mutable {
     private var internalMember: Int = 0 // private for oo encapsulation
     def member: Int = internalMember
-    def member_=(value:Int): Unit =
+    def member_=(value: Int): Unit =
       internalMember = value // setter
   }
 

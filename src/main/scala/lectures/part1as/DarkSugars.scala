@@ -25,4 +25,11 @@ object DarkSugars extends App {
   val aFunkyInstance: Action = (x: Int) => x + 1
 
   // identically above two things are same
+
+  // Runnables
+  val aThread = new Thread(new Runnable {
+    override def run(): Unit = println("hello, scala")
+  })
+
+  val nicerThread = new Thread(() => println("Hello scala thread using lambda/anonymous"))
 }

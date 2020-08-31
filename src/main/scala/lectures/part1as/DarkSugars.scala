@@ -54,4 +54,15 @@ object DarkSugars extends App {
 
   val myStream = 1 -->: 2 -->: 3 -->: new MyStream[Int]
 
+  // syntax sugar #4: multi-word method naming
+  class TeenGirl(name: String) {
+    def `and then said`(gossip: String) = println(s"$name said $gossip")
+  }
+
+  val lilly = new TeenGirl("Lilly")
+  lilly `and then said` "Scala is nice"
+
+    // syntax sugar $5: infix types
+
+
 }

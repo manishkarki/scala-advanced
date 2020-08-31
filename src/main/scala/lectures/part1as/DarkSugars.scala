@@ -40,4 +40,11 @@ object DarkSugars extends App {
 
   val anAbstractInstance: AnAbstractType = (a: Int) => println("done")
 
+  // syntax sugar #3: th ::
+  val prependedList = 2 :: List(3, 4)
+
+  // scala spec: last char decides associativity of method
+  // i.e if char is : right associative
+  println(1 :: 2 :: 3 :: List(5, 6, 7))
+
 }

@@ -39,7 +39,5 @@ object DarkSugars extends App {
   }
 
   val anAbstractInstance: AnAbstractType = (a: Int) => println("done")
-  println(anAbstractInstance.implementedMethod)
-  println(anAbstractInstance.f())
 
 }

@@ -7,7 +7,7 @@ object AdvancedPatternMatching extends App {
   val numbers = List(1)
 
   val desc = numbers match {
-    case head :: Nil => println(s"the only element is $head")
+    case head :: Nil => s"the only element is $head"
     case _ =>
   }
 
@@ -33,6 +33,6 @@ object AdvancedPatternMatching extends App {
   println(greet)
 
   val legalStatus = bob.age match {
-    case Person(status) => println(s"I'm $status")
+    case Person(status) => s"My legal status is : $status"
   }
 }

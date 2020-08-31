@@ -32,4 +32,13 @@ object DarkSugars extends App {
   })
 
   val nicerThread = new Thread(() => println("Hello scala thread using lambda/anonymous"))
+
+  abstract  class AnAbstractType {
+    def implementedMethod: Int = 25
+    def f(a: Int): Unit
+  }
+
+  val anAbstractInstance: AnAbstractType = (a: Int) => println("done")
+
+
 }

@@ -22,12 +22,17 @@ object AdvancedPatternMatching extends App {
 
   object Person {
     def unapply(person: Person): Option[(String, Int)] = Some((person.name, person.age))
+
+    def unapply(age: Int): Option[String] = Some(if(age > 21) "major" else "minor")
   }
 
   val bob = new Person("Bob", 23)
   val greet = bob match {
     case Person(name, age) => s"Hi, my name is $name and I'm $age y.o"
   }
-
   println(greet)
+
+  val legalStatus = bob.age match {
+    case Person(status) => println(s"I'm $status")
+  }
 }

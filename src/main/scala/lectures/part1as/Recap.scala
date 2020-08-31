@@ -54,5 +54,4 @@ object Recap extends App {
     char <- List('a', 'b', 'c')
   } yield num + '-' + char
 
-  println(pairs)
 }

@@ -36,8 +36,16 @@ object Recap extends App {
   println(factorial(6))
 
   // functional programming
-  val incrementer = new Function[Int, Int] {
+  val incrementer = new Function1[Int, Int] {
     override def apply(v1: Int): Int = v1 + 1
   }
   incrementer(3)
+
+  // the above can be replaced with syntactic sugar that'll resolve to type of Function1
+  val anonymousIncrementer = (x: Int) => x + 1
+
+  // applying incrementer to the list
+  List(1, 2, 3)
+    .map(anonymousIncrementer)
+    .foreach(a => println(a))
 }

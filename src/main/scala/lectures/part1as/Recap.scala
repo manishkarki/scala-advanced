@@ -52,6 +52,5 @@ object Recap extends App {
   val pairs = for {
     num <- List(1, 2, 3)
     char <- List('a', 'b', 'c')
-  } yield num + '-' + char
-
+  } yield num + "_" + char
 }

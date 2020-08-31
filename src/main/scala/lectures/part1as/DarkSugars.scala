@@ -45,5 +45,13 @@ object DarkSugars extends App {
 
   // scala spec: last char decides associativity of method
   // i.e if char is : right associative
+  1 :: 2 :: 3 :: List(4, 5)
+  List(4, 5).::(3).::(2).::(1) // equivalent
+
+  class MyStream[T] {
+    def -->: (value: T): MyStream[T] = this // actual impl
+  }
+
+  val myStream = 1 -->: 2 -->: 3 -->: new MyStream[Int]
 
 }

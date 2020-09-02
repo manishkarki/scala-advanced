@@ -60,4 +60,24 @@ object AdvancedPatternMatching extends App {
     case num Or str => s"$num is written as $str"
   }
 
+  // decomposing a sequence
+  val vararg = numbers match {
+    case List(1, _*) => "starting with 1"
+  }
+
+  abstract class MyList[+A] {
+    def head: A = ???
+    def tail: MyList[A] = ???
+  }
+
+  case object Empty extends MyList[Nothing]
+  case class Cons[+A](override val head: A, override val tail: MyList[A]) extends MyList[A]
+
+  object MyList {
+    def unapplySeq[A](list: MyList[A]): Option[Seq[A]] = {
+      if(list == Empty) Some(Seq.empty)
+      unapplySeq(list.tail).map(list.head +: _)
+    }
+  }
+
 }

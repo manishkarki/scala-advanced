@@ -87,10 +87,10 @@ object MySet {
    */
   def apply[A] (values: A*): MySet[A] = {
     @tailrec
-    def buildSet(valseq: Seq[A], acc: MySet[A]): MySet[A] =
-      if (valseq.isEmpty) acc
+    def buildSet(valSeq: Seq[A], acc: MySet[A]): MySet[A] =
+      if (valSeq.isEmpty) acc
       else
-        buildSet(valseq.tail, acc + valseq.head)
+        buildSet(valSeq.tail, acc + valSeq.head)
 
     buildSet(values.toSeq, new EmptySet[A])
   }

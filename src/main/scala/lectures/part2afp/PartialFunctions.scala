@@ -62,8 +62,22 @@ object PartialFunctions extends App {
    * 2 - dumb chatbot
    */
 
-  val pfInstance: PartialFunction[String, String] = {
-    case "same" => "its same"
+  val pfInstance = new PartialFunction[Int, Int] {
+    override def isDefinedAt(x: Int): Boolean =
+      x == 1 || x == 2 || x ==5
+
+    override def apply(x: Int): Int = x match {
+      case 1 => 42
+      case 2 => 43
+      case 5 => 999
+    }
+  }
+
+  val chatbot: PartialFunction[String, String] = {
+    case "hello" => "HI"
+    case "Bye" => "no return"
     case _ => "not same"
   }
+  scala.io.Source.stdin
+    .getLines().foreach(line => println(s"chatbot says: ${chatbot(line)}"))
 }

@@ -59,7 +59,7 @@ object AdvancedPatternMatching extends App {
   val either = Or(2, "two")
 
   val humanDescription = either match {
-    case Or(num, str) => s"$num is written as $str"
+    case num or str => s"$num is written as $str"
   }
 
   println(humanDescription)

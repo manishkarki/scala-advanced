@@ -95,3 +95,8 @@ object MySet {
     buildSet(values.toSeq, new EmptySet[A])
   }
 }
+
+object MySetPlayground extends App {
+  val s = MySet(1,2,3,4)
+  s + 5 foreach println
+}

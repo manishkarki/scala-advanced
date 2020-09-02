@@ -76,7 +76,7 @@ object AdvancedPatternMatching extends App {
   object MyList {
     def unapplySeq[A](list: MyList[A]): Option[Seq[A]] = {
       if(list == Empty) Some(Seq.empty)
-      unapplySeq(list.tail).map(list.head +: _)
+      else unapplySeq(list.tail).map(list.head +: _)
     }
   }
 

@@ -19,5 +19,4 @@ trait MySet[A] extends (A => Boolean){
   def filter(predicate: A => Boolean): MySet[A]
   def foreach(f: A => Unit): Unit
 
-
 }

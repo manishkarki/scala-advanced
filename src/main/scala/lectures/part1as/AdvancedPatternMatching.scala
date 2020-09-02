@@ -86,4 +86,23 @@ object AdvancedPatternMatching extends App {
     case _=> "not starting with 1, 2"
   }
 
+  // custom return types for unapply
+  abstract class Wrapper[T] {
+    def isEmpty: Boolean
+    def get: T
+  }
+
+  object PersonWrapper {
+    def unapply(person: Person): Wrapper[String] = new Wrapper[String] {
+      override def isEmpty: Boolean = false
+
+      override def get: String = person.name
+    }
+  }
+
+  println(bob match {
+    case PersonWrapper(n) => s"This person's name is $n"
+    case _=> s"An allien"
+  })
+
 }

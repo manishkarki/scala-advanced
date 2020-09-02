@@ -1,5 +1,7 @@
 package exercises
 
+import scala.annotation.tailrec
+
 /**
  * @author mkarki
  */
@@ -72,5 +74,24 @@ class NonEmptySet[A](head: A, tail: MySet[A]) extends MySet[A] {
   override def foreach(f: A => Unit): Unit = {
     f(head)
     tail foreach f
+  }
+}
+
+object MySet {
+  /*
+    val s = MySet(1, 2, 3) = buildSet(seq(1, 2, 3), [])
+    = buildSet(seq(2, 3), [] + 1)
+    = buildSet(seq(3), [1] + 2)
+    = buildSet(seq(), [1, 2] + 3)
+    = [1,2,3]
+   */
+  def apply[A] (values: A*): MySet[A] = {
+    @tailrec
+    def buildSet(valseq: Seq[A], acc: MySet[A]): MySet[A] =
+      if (valseq.isEmpty) acc
+      else
+        buildSet(valseq.tail, acc + valseq.head)
+
+    buildSet(values.toSeq, new EmptySet[A])
   }
 }

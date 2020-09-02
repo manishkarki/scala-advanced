@@ -54,4 +54,16 @@ object PartialFunctions extends App {
   /*
     Note: PF can only have one parameter type
    */
+
+  /**
+   * Exercises:
+   *
+   * 1 - Construct a PF instance (anonymous class)
+   * 2 - dumb chatbot
+   */
+
+  val pfInstance: PartialFunction[String, String] = {
+    case "same" => "its same"
+    case _ => "not same"
+  }
 }

@@ -44,4 +44,14 @@ object PartialFunctions extends App {
 
   println(pfChain(2)) // this'll print the value from aPartialFunction
   println(pfChain(45)) // this'll get it from orElse part of pfChain
+
+  // PF extends normal functions
+
+  val aTotalFunction: Int => Int = {
+    case 1 => 99
+  }
+
+  /*
+    Note: PF can only have one parameter type
+   */
 }

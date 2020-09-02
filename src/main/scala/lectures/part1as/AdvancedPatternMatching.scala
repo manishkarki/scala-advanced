@@ -52,8 +52,6 @@ object AdvancedPatternMatching extends App {
     case _ => "no property"
   }
 
-  println(mathProperty)
-
   // infix patterns
   case class Or[A, B](a: A, b: B)
   val either = Or(2, "two")
@@ -62,5 +60,4 @@ object AdvancedPatternMatching extends App {
     case num or str => s"$num is written as $str"
   }
 
-  println(humanDescription)
 }

@@ -33,7 +33,7 @@ object PartialFunctions extends App {
   println(aPartialFunction.isDefinedAt(65))
 
   // lift
-  val lifted = aPartialFunction.lift
+  val lifted = aPartialFunction.lift // Int => Option[Int]
   println(lifted(2))
-  println(lifted(98))
+  println(lifted(98)) // this will print an optional
 }

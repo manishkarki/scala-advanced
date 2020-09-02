@@ -21,5 +21,13 @@ object PartialFunctions extends App {
   }
   // {1, 2, 5} => Int
 
+  val aPartialFunction: PartialFunction[Int, Int] = {
+    case 1 => 42
+    case 2 => 56
+    case 5 => 999
+  } // partial function value, equivalent of above
+
+  println(aPartialFunction(2))
+//  println(aPartialFunction(57000)) // this will fail coz we don't have any case
 
 }

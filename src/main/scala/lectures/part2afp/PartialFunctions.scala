@@ -29,5 +29,11 @@ object PartialFunctions extends App {
 
   println(aPartialFunction(2))
 //  println(aPartialFunction(57000)) // this will fail coz we don't have any case
+  // PF utilities
+  println(aPartialFunction.isDefinedAt(65))
 
+  // lift
+  val lifted = aPartialFunction.lift
+  println(lifted(2))
+  println(lifted(98))
 }

@@ -102,7 +102,7 @@ object AdvancedPatternMatching extends App {
 
   val desc1 = bob match {
     case PersonWrapper(n) => s"This person's name is $n"
-    case _=> s"An allien"
+    case _=> s"An alien"
   }
 
 }

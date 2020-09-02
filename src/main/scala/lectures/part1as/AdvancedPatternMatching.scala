@@ -86,6 +86,4 @@ object AdvancedPatternMatching extends App {
     case _=> "not starting with 1, 2"
   }
 
-  print(decomposed)
-
 }
